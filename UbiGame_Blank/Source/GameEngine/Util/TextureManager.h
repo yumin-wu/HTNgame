@@ -11,16 +11,18 @@ namespace GameEngine
 		enum type
 		{
 			None = -1,
-
-			AddYourTexturesEnumerationsHere, // Replace this for your own enumerations
-
+            Player,     //<-- Add a new entry for our new texture
 			Count,
 		};
 	}	
 
 	inline const char* GetPath(eTexture::type texture)
 	{
-		return "UnknownTexType";
+        switch (texture)
+        {
+            case eTexture::Player: return "Player.png"; //<-- The name of the image on disk
+        }
+        return "UnknownTexType";
 	}
 
 	class TextureManager
