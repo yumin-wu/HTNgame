@@ -1,7 +1,7 @@
 #include "GameBoard.h"
 #include "GameEngine/GameEngineMain.h"
 #include "Game/Components/PlayerMovementComponent.h"
-#include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h" //<-- Remember to include the new component we will use
+#include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
 
 using namespace Game;
 
@@ -21,7 +21,7 @@ void GameBoard::CreatePlayer()
     GameEngine::SpriteRenderComponent* render = m_player->AddComponent<GameEngine::SpriteRenderComponent>(); //<-- Use the SpriteRenderComponent
 
     render->SetFillColor(sf::Color::Transparent);
-    render->SetTexture(GameEngine::eTexture::Player);  // <-- Assign the texture to this entity
+    render->SetTexture(GameEngine::eTexture::PlayerUp);  // <-- Assign the texture to this entity
 
     //Movement
     m_player->AddComponent<Game::PlayerMovementComponent>();  // <-- Added the movement component to the player

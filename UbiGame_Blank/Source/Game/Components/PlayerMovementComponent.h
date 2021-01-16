@@ -1,5 +1,6 @@
 #pragma once
 #include "GameEngine/EntitySystem/Component.h"
+#include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
 
 namespace Game
 {
@@ -8,5 +9,7 @@ namespace Game
     public:
         virtual void Update() override;
         virtual void OnAddToWorld() override;
+    private:
+        int m_currentFaceIndex;
     };
 }

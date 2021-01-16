@@ -12,6 +12,8 @@ namespace GameEngine
 		{
 			None = -1,
             Player,     //<-- Add a new entry for our new texture
+            PlayerUp,
+            Gasbone,
 			Count,
 		};
 	}	
@@ -21,6 +23,8 @@ namespace GameEngine
         switch (texture)
         {
             case eTexture::Player: return "Player.png"; //<-- The name of the image on disk
+            case eTexture::Gasbone: return "gasbone.png";
+            case eTexture::PlayerUp: return "robin_back_all.png";
         }
         return "UnknownTexType";
 	}

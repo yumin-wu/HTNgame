@@ -21,9 +21,6 @@ jobs:
     - name: Build Blank
       working-directory: ${{env.blank-directory}}
       run: make
-    - name: Build FlappBird
-      working-directory: ${{env.bird-directory}}
-      run: make
       
   build_windows:
     

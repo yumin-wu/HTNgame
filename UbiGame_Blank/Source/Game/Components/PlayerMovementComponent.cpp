@@ -38,6 +38,18 @@ void PlayerMovementComponent::Update() {
 
     //Update the entity position
     GetEntity()->SetPos(GetEntity()->GetPos() + displacement);
+
+    int maxFaces = 4;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+        ++m_currentFaceIndex;  // <-- We need to add a new int m_currentFaceIndex attribute member to the class
+        if (m_currentFaceIndex>= maxFaces) m_currentFaceIndex= 0;
+        GameEngine::SpriteRenderComponent* render = GetEntity()->GetComponent<GameEngine::SpriteRenderComponent>();
+        if (render)
+        {
+            render->SetTileIndex(sf::Vector2i(m_currentFaceIndex,0));
+        }
+    }
 }
 
 void PlayerMovementComponent::OnAddToWorld() {}
