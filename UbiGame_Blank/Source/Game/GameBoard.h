@@ -19,8 +19,9 @@ namespace Game
 		bool IsGameOver() { return false; }
     private:
         void CreatePlayer();          // <-- Added Function
-        void CreateWall();
         void CreateBackground();
+        void CreateLevel1();
+        void CreateSlimeKing();
         GameEngine::Entity* m_player; // <-- Added Member
         float m_gridSize;
 	};

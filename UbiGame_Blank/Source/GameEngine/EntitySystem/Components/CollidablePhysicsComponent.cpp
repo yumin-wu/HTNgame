@@ -62,8 +62,10 @@ void CollidablePhysicsComponent::Update()
 				else
 					pos.y += intersection.height;
 			}
-
-			GetEntity()->SetPos(pos);
+            if (colComponent->GetEntity()->GetEntityType() == EEntityType::Obstacle) {
+                m_didCollide = true;
+                GetEntity()->SetPos(pos);
+            }
 		}
 	}
 }

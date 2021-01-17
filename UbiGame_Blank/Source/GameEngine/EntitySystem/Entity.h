@@ -5,6 +5,13 @@
 
 namespace GameEngine
 {
+    enum EEntityType
+    {
+        None,
+        Player,
+        Obstacle,
+        Projectile
+    };
 	class Entity
 	{
 	public:
@@ -23,7 +30,10 @@ namespace GameEngine
 		
 		void		 SetPos(sf::Vector2f pos)   { m_pos = pos; }
 		void		 SetSize(sf::Vector2f size) { m_size = size; }
-		void	     SetRotation(float rotation) { m_rotation = rotation; }		
+		void	     SetRotation(float rotation) { m_rotation = rotation; }
+
+		void SetEntityType(EEntityType type) { m_type = type; }
+        EEntityType GetEntityType() const { return m_type; }
 
 		//Components
 		template <class T>
@@ -71,5 +81,6 @@ namespace GameEngine
 		sf::Vector2f		   m_pos;
 		sf::Vector2f		   m_size;		
 		float				   m_rotation;
+        EEntityType            m_type;
 	};
 }

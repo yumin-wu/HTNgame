@@ -15,8 +15,14 @@ namespace GameEngine
             Gasbone,
             PlayerUp,
             PlayerDown,
-            IceWall1Top,
             IceFloor1,
+            IceWall1Top,
+            IceWall1Left,
+            IceWall1Bottom,
+            IceWall1RightTop,
+            IceWall1RightBottom,
+            Level1,
+            SlimeKing,
 			Count,
 		};
 	}	
@@ -29,8 +35,14 @@ namespace GameEngine
             case eTexture::Gasbone: return "monster/gasbone.png";
             case eTexture::PlayerUp: return "Robin/robin_back_all.png";
             case eTexture::PlayerDown: return "Robin/robin_front_all.png";
-            case eTexture::IceWall1Top: return "level_1/wall_up.png";
             case eTexture::IceFloor1: return "level_1/floor.png";
+            case eTexture::IceWall1Top: return "level_1/wall_up.png";
+            case eTexture::IceWall1Left: return "level_1/wall_left.png";
+            case eTexture::IceWall1Bottom: return "level_1/wall_bottom.png";
+            case eTexture::IceWall1RightTop: return "level_1/wall_top_right.png";
+            case eTexture::IceWall1RightBottom: return "level_1/wall_bottom_right.png";
+            case eTexture::SlimeKing: return "slime/slime_king.png";
+            case eTexture::Level1: return "level_1/level_1_all.png";
         }
         return "UnknownTexType";
 	}
