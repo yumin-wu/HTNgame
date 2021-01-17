@@ -46,9 +46,11 @@ namespace TextureHelper
 	{
         switch (texture)
         {
-            case eTexture::PlayerUp: return sf::Vector2f(32.0f, 32.0f); //Add here the tile sizes
+            case eTexture::Player: return sf::Vector2f(32.0f, 32.0f); //Add here the tile sizes
+            case eTexture::PlayerUp: return sf::Vector2f(32.0f, 32.0f);
             case eTexture::PlayerDown: return sf::Vector2f(32.0f, 32.0f);
         }
         return sf::Vector2f(-1.f, -1.f);
 	}
 }
+

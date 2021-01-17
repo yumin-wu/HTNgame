@@ -40,24 +40,19 @@ void PlayerMovementComponent::Update() {
     //Update the entity position
     GetEntity()->SetPos(GetEntity()->GetPos() + displacement);
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
-        GameEngine::AnimationComponent *animComponent = GetEntity()->GetComponent<GameEngine::AnimationComponent>();
-        if (animComponent) {
-            animComponent->SetIsLooping(true);
-            animComponent->PlayAnim(GameEngine::EAnimationId::PlayerStatic);
-        }
-    }
-
-    int maxFaces = 4;
+    int maxFaces = 12;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
-        m_uWasPressed = true; // <-- Add a new bool m_fwasPressed and initialize it to false;
+        m_dWasPressed = true; // <-- Add a new bool m_fwasPressed and initialize it to false;
     }
-    else if (m_uWasPressed) // <-- Check if it was pressed ( we already know here that is not currently pressed )
+    else if (m_dWasPressed) // <-- Check if it was pressed ( we already know here that is not currently pressed )
     {
-        m_uWasPressed = false; // <-- Reset our WasPressed flag
-        ++m_currentFaceIndex;  // <-- We need to add a new int m_currentFaceIndex attribute member to the class
-        if (m_currentFaceIndex>= maxFaces) m_currentFaceIndex= 0;
+        m_dWasPressed = false; // <-- Reset our WasPressed flag
+        if (m_currentFaceIndex >= 2) {
+            m_currentFaceIndex = 0;
+        } else {
+            ++m_currentFaceIndex;
+        }
         GameEngine::SpriteRenderComponent* render = GetEntity()->GetComponent<GameEngine::SpriteRenderComponent>();
         if (render)
         {
@@ -67,11 +62,58 @@ void PlayerMovementComponent::Update() {
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
+        m_uWasPressed = true; // <-- Add a new bool m_fwasPressed and initialize it to false;
+    }
+    else if (m_uWasPressed) // <-- Check if it was pressed ( we already know here that is not currently pressed )
+    {
+        m_uWasPressed = false; // <-- Reset our WasPressed flag
+        if (m_currentFaceIndex >= 5 || m_currentFaceIndex < 3) {
+            m_currentFaceIndex = 3;
+        } else {
+            ++m_currentFaceIndex;
+        }
         GameEngine::SpriteRenderComponent* render = GetEntity()->GetComponent<GameEngine::SpriteRenderComponent>();
         if (render)
         {
-//            std::cout<<"hi";
-            render->SetTexture(GameEngine::eTexture::PlayerUp);
+            render->SetTileIndex(sf::Vector2i(m_currentFaceIndex,0));
+        }
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    {
+        m_lWasPressed = true; // <-- Add a new bool m_fwasPressed and initialize it to false;
+    }
+    else if (m_lWasPressed) // <-- Check if it was pressed ( we already know here that is not currently pressed )
+    {
+        m_lWasPressed = false; // <-- Reset our WasPressed flag
+        if (m_currentFaceIndex >= 8 || m_currentFaceIndex < 6) {
+            m_currentFaceIndex = 6;
+        } else {
+            ++m_currentFaceIndex;
+        }
+        GameEngine::SpriteRenderComponent* render = GetEntity()->GetComponent<GameEngine::SpriteRenderComponent>();
+        if (render)
+        {
+            render->SetTileIndex(sf::Vector2i(m_currentFaceIndex,0));
+        }
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    {
+        m_rWasPressed = true; // <-- Add a new bool m_fwasPressed and initialize it to false;
+    }
+    else if (m_rWasPressed) // <-- Check if it was pressed ( we already know here that is not currently pressed )
+    {
+        m_rWasPressed = false; // <-- Reset our WasPressed flag
+        if (m_currentFaceIndex >= 11 || m_currentFaceIndex < 9) {
+            m_currentFaceIndex = 9;
+        } else {
+            ++m_currentFaceIndex;
+        }
+        GameEngine::SpriteRenderComponent* render = GetEntity()->GetComponent<GameEngine::SpriteRenderComponent>();
+        if (render)
+        {
+            render->SetTileIndex(sf::Vector2i(m_currentFaceIndex,0));
         }
     }
 }

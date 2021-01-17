@@ -12,5 +12,8 @@ namespace Game
     private:
         int m_currentFaceIndex;
         bool m_uWasPressed = false;
+        bool m_dWasPressed = false;
+        bool m_lWasPressed = false;
+        bool m_rWasPressed = false;
     };
 }
