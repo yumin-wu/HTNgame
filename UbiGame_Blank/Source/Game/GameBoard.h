@@ -22,6 +22,7 @@ namespace Game
         void CreateWall();
         void CreateBackground();
         GameEngine::Entity* m_player; // <-- Added Member
+        float m_gridSize;
 	};
 }
 

@@ -15,7 +15,7 @@ namespace GameEngine
             Gasbone,
             PlayerUp,
             PlayerDown,
-            IceWall,
+            IceWall1Top,
             IceFloor1,
 			Count,
 		};
@@ -25,12 +25,12 @@ namespace GameEngine
 	{
         switch (texture)
         {
-            case eTexture::Player: return "Player.png"; //<-- The name of the image on disk
+            case eTexture::Player: return "slime/slime_walk_row.png"; //<-- The name of the image on disk
             case eTexture::Gasbone: return "monster/gasbone.png";
             case eTexture::PlayerUp: return "Robin/robin_back_all.png";
             case eTexture::PlayerDown: return "Robin/robin_front_all.png";
-            case eTexture::IceWall: return "wall/ice_wall_all.png";
-            case eTexture::IceFloor1: return "wall/stone_wall_all.png";
+            case eTexture::IceWall1Top: return "level_1/wall_up.png";
+            case eTexture::IceFloor1: return "level_1/floor.png";
         }
         return "UnknownTexType";
 	}
