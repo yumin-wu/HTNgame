@@ -11,5 +11,6 @@ namespace Game
         virtual void OnAddToWorld() override;
     private:
         int m_currentFaceIndex;
+        bool m_uWasPressed = false;
     };
 }

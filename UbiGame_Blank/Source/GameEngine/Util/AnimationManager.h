@@ -10,7 +10,8 @@ namespace GameEngine
 	namespace EAnimationId
 	{
 		enum type
-		{			
+		{
+		    PlayerStatic,
 			None,
 		};
 	}

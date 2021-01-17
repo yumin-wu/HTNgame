@@ -12,8 +12,11 @@ namespace GameEngine
 		{
 			None = -1,
             Player,     //<-- Add a new entry for our new texture
-            PlayerUp,
             Gasbone,
+            PlayerUp,
+            PlayerDown,
+            IceWall,
+            IceFloor1,
 			Count,
 		};
 	}	
@@ -23,8 +26,11 @@ namespace GameEngine
         switch (texture)
         {
             case eTexture::Player: return "Player.png"; //<-- The name of the image on disk
-            case eTexture::Gasbone: return "gasbone.png";
-            case eTexture::PlayerUp: return "robin_back_all.png";
+            case eTexture::Gasbone: return "monster/gasbone.png";
+            case eTexture::PlayerUp: return "Robin/robin_back_all.png";
+            case eTexture::PlayerDown: return "Robin/robin_front_all.png";
+            case eTexture::IceWall: return "wall/ice_wall_all.png";
+            case eTexture::IceFloor1: return "wall/stone_wall_all.png";
         }
         return "UnknownTexType";
 	}

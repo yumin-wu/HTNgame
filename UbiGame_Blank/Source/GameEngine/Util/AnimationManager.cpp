@@ -31,14 +31,20 @@ void AnimationManager::InitStaticGameAnimations()
 	3)
 	);
 	*/
+    m_animDefinitions.push_back(
+            SAnimationDefinition(
+                    EAnimationId::PlayerStatic,
+                    eTexture::Player,
+                    sf::Vector2i(0, 0),
+                    10,
+                    3)
+            );
 }
-
 
 void AnimationManager::ReleaseStaticGameAnimations()
 {
 	m_animDefinitions.clear();
 }
-
 
 const SAnimationDefinition* AnimationManager::GetAnimDefinition(EAnimationId::type animId) const
 {
